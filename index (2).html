@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>خريطة المشاغبين — نسخة المالتيفيرس</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Markazi+Text:wght@500;700&family=MedievalSharp&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="lang-ar" id="pageBody">
+
+<button class="lang-toggle" id="langToggle" data-ar-label="English" data-en-label="عربي">English</button>
+
+<header>
+  <h1 id="pageTitle" data-ar="خريطة المشاغبين" data-en="The Marauder's Map">خريطة المشاغبين</h1>
+  <svg class="underline-flourish" viewBox="0 0 400 20" preserveAspectRatio="none">
+    <path d="M5,10 Q100,2 200,10 T395,10" stroke="#5b3a21" stroke-width="1.5" fill="none"/>
+  </svg>
+  <p class="subtitle" id="pageSubtitle" data-ar="نسخة المالتيفيرس" data-en="Multiverse Edition">نسخة المالتيفيرس</p>
+</header>
+
+<button class="oath-btn" id="oathBtn">I solemnly swear that I am up to no good</button>
+
+<div class="map-wrap" id="mapWrap">
+  <svg id="map" viewBox="0 0 800 620" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <defs>
+      <symbol id="bootprint" viewBox="-6 -11 12 22">
+        <path d="M0,-10.5 C2.6,-10.5 4.2,-8.3 4.4,-5.2 C4.6,-2.6 4.1,0.6 3.6,3.2 C3.3,5 3.6,6.6 4,8 C4.3,9.1 3.6,10.2 2.2,10.4 C0.7,10.6 -0.7,10.6 -2.2,10.4 C-3.6,10.2 -4.3,9.1 -4,8 C-3.6,6.6 -3.3,5 -3.6,3.2 C-4.1,0.6 -4.6,-2.6 -4.4,-5.2 C-4.2,-8.3 -2.6,-10.5 0,-10.5 Z"/>
+      </symbol>
+      <filter id="roughPaper" x="-10%" y="-10%" width="120%" height="120%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.2"/>
+      </filter>
+    </defs>
+
+    <!-- everything below is invisible until the oath is sworn (single opacity switch) -->
+    <g class="ink-layer">
+
+      <rect class="frame-outer" x="8" y="8" width="784" height="604" rx="4"/>
+      <rect class="frame-inner" x="14" y="14" width="772" height="592" rx="3"/>
+
+      <g opacity="0.5">
+        <g transform="translate(300,220)"><ellipse class="ink-stain" rx="26" ry="16" opacity="0.05"/><ellipse class="ink-stain" rx="14" ry="9" opacity="0.06" transform="translate(10,4) rotate(20)"/></g>
+        <g transform="translate(520,225)"><ellipse class="ink-stain" rx="22" ry="14" opacity="0.05"/><ellipse class="ink-stain" rx="12" ry="8" opacity="0.06" transform="translate(-8,5) rotate(-15)"/></g>
+        <g transform="translate(255,430)"><ellipse class="ink-stain" rx="20" ry="13" opacity="0.05"/></g>
+        <g transform="translate(560,425)"><ellipse class="ink-stain" rx="24" ry="15" opacity="0.05"/></g>
+      </g>
+
+      <path class="flourish" d="M20,34 Q30,20 46,22 Q34,26 34,38" />
+      <circle class="flourish-dot" cx="46" cy="22" r="1.6"/>
+      <path class="flourish" d="M780,34 Q770,20 754,22 Q766,26 766,38" />
+      <circle class="flourish-dot" cx="754" cy="22" r="1.6"/>
+      <path class="flourish" d="M20,586 Q30,600 46,598 Q34,594 34,582" />
+      <circle class="flourish-dot" cx="46" cy="598" r="1.6"/>
+      <path class="flourish" d="M780,586 Q770,600 754,598 Q766,594 766,582" />
+      <circle class="flourish-dot" cx="754" cy="598" r="1.6"/>
+
+      <g class="stamp" transform="translate(60,58) rotate(-14)">
+        <circle r="36" stroke-width="2"/>
+        <circle r="30" stroke-width="1"/>
+        <text y="-4" font-size="11">MULTIVERSE</text>
+        <text y="10" font-size="11">EDITION</text>
+      </g>
+
+      <g class="compass" transform="translate(748,52)">
+        <line x1="0" y1="-24" x2="0" y2="24" stroke-width="1"/>
+        <line x1="-24" y1="0" x2="24" y2="0" stroke-width="1"/>
+        <path d="M0,-24 L5,-6 L0,-10 L-5,-6 Z" fill="var(--ink-sepia)" stroke="none"/>
+        <text y="-30" font-size="12">N</text>
+        <text y="40" font-size="11">S</text>
+        <text x="32" y="4" font-size="11">E</text>
+        <text x="-32" y="4" font-size="11">W</text>
+      </g>
+
+      <!-- corridors -->
+      <path class="corridor" d="M400,470 L400,300"/>
+      <path class="corridor" d="M400,470 Q400,270 400,112"/>
+      <path class="corridor" d="M400,470 Q300,380 190,150"/>
+      <path class="corridor" d="M400,470 Q500,380 610,150"/>
+      <path class="corridor" d="M400,470 Q300,420 150,470"/>
+      <path class="corridor" d="M400,470 Q510,405 660,430"/>
+      <path class="corridor" d="M400,470 Q580,535 730,570"/>
+      <path class="corridor" d="M400,470 Q400,520 400,560"/>
+
+      <circle class="hub-mark" cx="400" cy="470" r="5"/>
+
+      <!-- Multiversal Principal's Office — the big central one -->
+      <g class="locale-group" data-name-ar="مكتب المدير المالتيڤيرسي" data-name-en="Multiverse Principal's Office" data-text-ar="مكتب مديرنا شيرلوك بانر و تدخل تلاقي استقالات مرفوضة و مرتب غير مدفوع" data-text-en="In the office of our manager, Sherlock Banner, you walk in to find rejected resignation letters and unpaid salaries." data-x="400" data-y="300">
+        <image class="location-icon-img" href="multiverse-office.png" x="295" y="207" width="210" height="186" preserveAspectRatio="xMidYMid meet"/>
+        <circle class="locale-hit" cx="400" cy="300" r="125"/>
+        <text class="locale-label hero-label" x="400" y="413"></text>
+      </g>
+
+      <!-- Vice Principal's Office — a regular department like the rest -->
+      <g class="locale-group" data-name-ar="مكتب نائب المدير" data-name-en="Vice Principal's Office" data-text-ar=" مكتب اليان هتدخل تلاقي فرو قطط" data-text-en=" Alian's office... you walk in and find cat fur." data-x="400" data-y="78">
+        <image class="location-icon-img" href="vice-principal.png" x="344" y="28.5" width="112" height="99" preserveAspectRatio="xMidYMid meet"/>
+        <circle class="locale-hit" cx="400" cy="78" r="70"/>
+        <text class="locale-label" x="400" y="18.5"></text>
+      </g>
+
+      <!-- Data Collectors Dep. -->
+      <g class="locale-group" data-name-ar="قسم جمع البيانات" data-name-en="Data Collectors Dept." data-text-ar="التيم المجتهد المفضل تيم الداتا بيجمعوا معلومات هاري بوتر و اسئلة و هكذا متبصلهمش بقي عشان الدمعة هتفر من عينيهم بعد تاسك الدوري. ده كفاية إن فيه أم حنفي يعني" data-text-en="The favorite, hardworking team — the Data team. They gather all the Harry Potter facts and trivia, so don't look at them too closely or tears will well up in their eyes after the round's task. Let's just say there's definitely a bit of a data hoarder among them." data-text-en="The favorite, hardworking team—the Data team—don't look at them too closely, or tears will well up in their eyes after the Round task." data-x="190" data-y="150">
+        <image class="location-icon-img" href="data-collectors.png" x="134" y="100.5" width="112" height="99" preserveAspectRatio="xMidYMid meet"/>
+        <circle class="locale-hit" cx="190" cy="150" r="70"/>
+        <text class="locale-label" x="190" y="88.5"></text>
+      </g>
+
+      <!-- Facebook Management Dep. -->
+      <g class="locale-group" data-name-ar="قسم إدارة فيسبوك" data-name-en="Facebook Management Dept." data-text-ar="تيم الفيس يعني الريتش يعني الكونتات يعني البوستات الي بتشتم سنيب و دريكو تحية للتيم المشطشط" data-text-en="Team Facebook means reach, engagement, and posts dissing Snip and Draco—shoutout to the fiery crew." data-x="610" data-y="150">
+        <image class="location-icon-img" href="facebook.png" x="554" y="100.5" width="112" height="99" preserveAspectRatio="xMidYMid meet"/>
+        <circle class="locale-hit" cx="610" cy="150" r="70"/>
+        <text class="locale-label" x="610" y="88.5"></text>
+      </g>
+
+      <!-- Video Editing & Design Dep. (merged) -->
+      <g class="locale-group" data-name-ar="قسم المونتاج والتصميم" data-name-en="Video Editing &amp; Design Dept." data-text-ar="لأ نقف وقفة في تيمي العظيم، سمعت إن عندهم ديزاينر شاطرة اسمها عهد هتلاقوها بتلف في الخريطة هنا، من وجهة نظري محتاجة تدوها مرتب، وشها بيقول كده (التيم ده عظيم)" data-text-en="Let's pause for a moment on my amazing team — I heard they have a talented designer named Ahd, you'll find her wandering around this map. In my opinion, she deserves a raise — her face says it all (this team is amazing)." data-x="150" data-y="470">
+        <image class="location-icon-img" href="viddep.png" x="94" y="420.5" width="112" height="99" preserveAspectRatio="xMidYMid meet"/>
+        <circle class="locale-hit" cx="150" cy="470" r="70"/>
+        <text class="locale-label" x="150" y="408.5"></text>
+      </g>
+
+      <!-- WhatsApp Management Dep. -->
+      <g class="locale-group" data-name-ar="قسم إدارة واتساب" data-name-en="WhatsApp Management Dept." data-text-ar="أدب، أخلاق، التزام، فتح جروبات في مواعيد محددة، وأدمنز وحوارات (بتطبيل للأقسام اللي معرفهاش + مش هسمحلكم عشان اتشال مني أدمن الواتس)" data-text-en="Manners, ethics, commitment, opening groups right on schedule, admins and endless chats (shoutout to the departments that don't even know this team exists — and no, I'm not letting you get my WhatsApp admin taken away from me)." data-x="660" data-y="430">
+        <image class="location-icon-img" href="whatsapp.png" x="604" y="380.5" width="112" height="99" preserveAspectRatio="xMidYMid meet"/>
+        <circle class="locale-hit" cx="660" cy="430" r="70"/>
+        <text class="locale-label" x="660" y="368.5"></text>
+      </g>
+
+      <!-- Channel Management Dep. -->
+      <g class="locale-group" data-name-ar="قسم إدارة القنوات" data-name-en="Channel Management Dept." data-text-ar="شكلهم ناس محترمة ولابسة بدل يعني" data-text-en="They look like proper, respectable people — dressed in suits and everything." data-x="730" data-y="570">
+        <image class="location-icon-img" href="channel-management.png" x="674" y="520.5" width="112" height="99" preserveAspectRatio="xMidYMid meet"/>
+        <circle class="locale-hit" cx="730" cy="570" r="70"/>
+        <text class="locale-label" x="730" y="508.5"></text>
+      </g>
+
+      <!-- Analysis & Development Dep. -->
+      <g class="locale-group" data-name-ar="مكتب التحليل والتطوير" data-name-en="Analysis &amp; Development Dept." data-text-ar="يعني ده تيم أنا لسه مكتشفة إنه موجود حالًا، فشكلهم ناس طيبة بيشتغلوا في سكات" data-text-en="Honestly, this is a team I just found out exists — they seem like sweet people quietly getting the work done." data-x="400" data-y="560">
+        <image class="location-icon-img" href="analysis-development.png" x="344" y="510.5" width="112" height="99" preserveAspectRatio="xMidYMid meet"/>
+        <circle class="locale-hit" cx="400" cy="560" r="70"/>
+        <text class="locale-label" x="400" y="498.5"></text>
+      </g>
+
+      <!-- Multiverse visitor trails: hand-wandering routes, all in the same brown ink -->
+      <g id="multiverseTrails">
+        <path class="trail-line" id="trail1" d="M95,42 Q160,75 95,115 Q45,145 135,160 Q225,175 245,120 Q275,70 382,66"/>
+        <path class="trail-line" id="trail2" d="M705,44 Q640,70 715,120 Q750,155 655,168 Q575,178 550,125 Q510,80 418,66"/>
+        <path class="trail-line" id="trail3" d="M45,300 Q120,270 65,215 Q30,170 125,158 Q215,148 225,195 Q235,235 295,195 Q345,150 378,92"/>
+        <path class="trail-line" id="trail4" d="M755,305 Q680,255 735,205 Q765,155 675,155 Q595,155 575,195 Q560,245 505,200 Q470,155 422,92"/>
+        <path class="trail-line" id="trail5" d="M145,605 Q220,565 155,515 Q100,470 200,455 Q290,445 245,385 Q210,335 305,300 Q380,270 335,205 Q310,155 388,104"/>
+        <path class="trail-line" id="trail6" d="M655,600 Q580,555 650,510 Q705,470 605,465 Q515,455 555,395 Q590,335 495,305 Q420,275 465,205 Q490,155 412,104"/>
+        <path class="trail-line" id="trail7" d="M330,608 Q260,540 320,470 Q380,410 300,350 Q230,290 310,230 Q380,170 300,110 Q250,60 330,15"/>
+
+        <g id="multiverseFootprints">
+          <g class="footprint-set" id="fp-trail1"></g>
+          <g class="footprint-set" id="fp-trail2"></g>
+          <g class="footprint-set" id="fp-trail3"></g>
+          <g class="footprint-set" id="fp-trail4"></g>
+          <g class="footprint-set" id="fp-trail5"></g>
+          <g class="footprint-set" id="fp-trail6"></g>
+          <g class="footprint-set" id="fp-trail7"></g>
+        </g>
+
+        <!-- walkers: feet rotate with the path, name-banner rides above them but stays upright -->
+        <g class="walkers">
+          <g class="walker-foot" data-trail="trail1">
+            <use href="#bootprint" class="bootprint" width="9" height="16" x="-4.5" y="-8"/>
+          </g>
+          <g class="walker-banner" data-trail="trail1">
+            <g class="name-banner" transform="translate(0,-30)" data-ar-l1="شيرلوك" data-ar-l2="بانر" data-en-l1="Sherlock" data-en-l2="Banner">
+              <image href="banner.png" x="-90" y="-60" width="180" height="120" preserveAspectRatio="xMidYMid meet"/>
+              <text class="banner-text banner-line1" x="-7" y="-27"></text>
+              <text class="banner-text banner-line2" x="14" y="-6"></text>
+            </g>
+          </g>
+          <g class="walker-foot" data-trail="trail2">
+            <use href="#bootprint" class="bootprint" width="9" height="16" x="-4.5" y="-8"/>
+          </g>
+          <g class="walker-banner" data-trail="trail2">
+            <g class="name-banner" transform="translate(0,-30)" data-ar-l1="اليان" data-ar-l2="بانر" data-en-l1="Alian" data-en-l2="Banner">
+              <image href="banner.png" x="-90" y="-60" width="180" height="120" preserveAspectRatio="xMidYMid meet"/>
+              <text class="banner-text banner-line1" x="-7" y="-27"></text>
+              <text class="banner-text banner-line2" x="14" y="-6"></text>
+            </g>
+          </g>
+          <g class="walker-foot" data-trail="trail3">
+            <use href="#bootprint" class="bootprint" width="9" height="16" x="-4.5" y="-8"/>
+          </g>
+          <g class="walker-banner" data-trail="trail3">
+            <g class="name-banner" transform="translate(0,-30)" data-ar-l1="عهد" data-ar-l2="بنت لا أحد" data-en-l1="Ahd" data-en-l2="Bint La Ahad">
+              <image href="banner.png" x="-90" y="-60" width="180" height="120" preserveAspectRatio="xMidYMid meet"/>
+              <text class="banner-text banner-line1" x="-7" y="-27"></text>
+              <text class="banner-text banner-line2" x="14" y="-6"></text>
+            </g>
+          </g>
+          <g class="walker-foot" data-trail="trail4">
+            <use href="#bootprint" class="bootprint" width="9" height="16" x="-4.5" y="-8"/>
+          </g>
+          <g class="walker-banner" data-trail="trail4">
+            <g class="name-banner" transform="translate(0,-30)" data-ar-l1="ريونا" data-ar-l2="بانر" data-en-l1="Riona" data-en-l2="Banner">
+              <image href="banner.png" x="-90" y="-60" width="180" height="120" preserveAspectRatio="xMidYMid meet"/>
+              <text class="banner-text banner-line1" x="-7" y="-27"></text>
+              <text class="banner-text banner-line2" x="14" y="-6"></text>
+            </g>
+          </g>
+          <g class="walker-foot" data-trail="trail5">
+            <use href="#bootprint" class="bootprint" width="9" height="16" x="-4.5" y="-8"/>
+          </g>
+          <g class="walker-banner" data-trail="trail5">
+            <g class="name-banner" transform="translate(0,-30)" data-ar-l1="رنيم" data-ar-l2="لبودي" data-en-l1="Raneem" data-en-l2="Younes">
+              <image href="banner.png" x="-90" y="-60" width="180" height="120" preserveAspectRatio="xMidYMid meet"/>
+              <text class="banner-text banner-line1" x="-7" y="-27"></text>
+              <text class="banner-text banner-line2" x="14" y="-6"></text>
+            </g>
+          </g>
+          <g class="walker-foot" data-trail="trail6">
+            <use href="#bootprint" class="bootprint" width="9" height="16" x="-4.5" y="-8"/>
+          </g>
+          <g class="walker-banner" data-trail="trail6">
+            <g class="name-banner" transform="translate(0,-30)" data-ar-l1="رحمة" data-ar-l2="رمضان" data-en-l1="Rahma" data-en-l2="Ramadan">
+              <image href="banner.png" x="-90" y="-60" width="180" height="120" preserveAspectRatio="xMidYMid meet"/>
+              <text class="banner-text banner-line1" x="-7" y="-27"></text>
+              <text class="banner-text banner-line2" x="14" y="-6"></text>
+            </g>
+          </g>
+          <g class="walker-foot" data-trail="trail7">
+            <use href="#bootprint" class="bootprint" width="9" height="16" x="-4.5" y="-8"/>
+          </g>
+          <g class="walker-banner" data-trail="trail7">
+            <g class="name-banner" transform="translate(0,-30)" data-ar-l1="أحمد" data-ar-l2="محمود" data-en-l1="Ahmed" data-en-l2="Mahmoud">
+              <image href="banner.png" x="-90" y="-60" width="180" height="120" preserveAspectRatio="xMidYMid meet"/>
+              <text class="banner-text banner-line1" x="-7" y="-27"></text>
+              <text class="banner-text banner-line2" x="14" y="-6"></text>
+            </g>
+          </g>
+        </g>
+      </g>
+
+    </g>
+  </svg>
+</div>
+
+<div class="hint" id="pageHint" data-ar="دوس على أي مكان في الخريطة عشان تشوفي حكايته" data-en="Tap anywhere on the map to reveal its story">دوسي على أي مكان في الخريطة عشان تشوفي حكايته</div>
+
+<script src="script.js"></script>
+</body>
+</html>
